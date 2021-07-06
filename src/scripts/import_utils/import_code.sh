@@ -1,4 +1,4 @@
-source ../app_config.sh
+source ./config.sh
 
 cd ../
 if [ -n $SOURCE_CODE_LOCATION ]; then

@@ -1,5 +1,5 @@
 source ../../app_config.sh
-source ../../db_config.sh
+source ../../import_utils/config.sh
 
 CONTAINER_NAME="${DOCKER_IMAGE_NAME}.dapp"
 

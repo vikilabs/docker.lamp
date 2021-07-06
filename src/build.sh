@@ -29,26 +29,22 @@ mv "${DOCKER_IMAGE_NAME}.tar" $DOCKER_IMAGE_PATH/$DOCKER_IMAGE_NAME/
 
 #Create config.sh	-> Start
 
+rm scripts/install/app_config.sh 2>/dev/null 1>/dev/null
+
 echo '# Docker Container Configuration' > app_config.sh
 echo ''					>> app_config.sh
-echo 'INSTALLER_BASE=${PWD}'		>> app_config.sh
 echo ''					>> app_config.sh
 echo "DOCKER_IMAGE_NAME="$DOCKER_IMAGE_NAME""	>> app_config.sh
 #echo 'MOUNT_SHARES="-v ${PWD}/app_root/app:/app_root/app -v ${PWD}/app_root/db:/var/lib/mysql  -v ${PWD}/app_root/configs:/app_root/configs -v ${PWD}/app_root/startup:/app_root/startup"' >> app_config.sh
 echo 'MOUNT_SHARES="-v ${PWD}/app_root/app:/app_root/app  -v ${PWD}/app_root/configs:/app_root/configs -v ${PWD}/app_root/startup:/app_root/startup"' >> app_config.sh
 echo '#EXPOSE_PORTS=""' >> app_config.sh
-echo '#EXPOSE_PORTS="-p 80:80"' >> app_config.sh
 echo 'EXPOSE_PORTS="-p 5000:80"' >> app_config.sh
 echo '' >> app_config.sh
-echo '# Source Code Location, If it is not empty -> the contents of "SOURCE_CODE_LOCATION" will be copied app_root/app/' >> app_config.sh
-echo '' >> app_config.sh
-echo 'SOURCE_CODE_LOCATION=""' >> app_config.sh
 echo ''	>> app_config.sh
 
 chmod 777 app_config.sh
 
 mv app_config.sh  $DOCKER_IMAGE_PATH/$DOCKER_IMAGE_NAME/
-cp configs/db_config.sh $DOCKER_IMAGE_PATH/$DOCKER_IMAGE_NAME/
 
 #Create config.sh	-> End
 

@@ -1,3 +1,15 @@
+#########################################
+#	SOURCE CODE LOCATION 		#
+#########################################
+
+#Location of Source Code and Data [ To Import From ]
+#The contents of SOURCE_CODE_LOCATION will be copied to app_root/app [ Website Root ]
+SOURCE_CODE_LOCATION=""
+
+#########################################
+#	DATABASE DETAILS		#
+#########################################
+
 DB1_NAME=""
 DB1_USERNAME=""
 DB1_PASSWORD=""

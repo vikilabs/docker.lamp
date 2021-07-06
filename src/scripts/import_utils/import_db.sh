@@ -1,4 +1,5 @@
-source ../app_config.sh
+source ./config.sh
+
 [ $? -ne 0 ] && { echo "error line ( import_db.sh : ${LINENO} )"; exit 1; }
 cd ../scripts/db
 [ $? -ne 0 ] && { echo "error line ( import_db.sh : ${LINENO} )"; exit 1; }
