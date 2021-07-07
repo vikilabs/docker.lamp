@@ -1,8 +1,8 @@
-source ./db_helper/db_helper.sh
+cd db_helper; source ./db_helper.sh; cd ..
 
 create_db(){
 	T_DB_NAME=$1
-	if [ -n "$T_DB_NAME" ]; then
+	if [ ! -z "$T_DB_NAME" ]; then
 		echo "creating db ( $T_DB_NAME )"
 		CMD="create database $T_DB_NAME;"
 		$DB_CMD "$CMD" 2> /dev/null 1>/dev/null
@@ -14,8 +14,8 @@ create_user(){
 	T_DB_USER=$1
 	T_DB_PASS=$2
 
-	if [ -n "$T_DB_USER" ]; then
-		if [ -n "$T_DB_PASS" ]; then
+	if [ ! -z "$T_DB_USER" ]; then
+		if [ ! -z "$T_DB_PASS" ]; then
 			echo "Creating DB User ( $T_DB_USER )"
 			CMD="CREATE USER ${T_DB_USER}@localhost IDENTIFIED BY \"$T_DB_PASS\";"
 			$DB_CMD "$CMD" 2>/dev/null 1>/dev/null
@@ -29,7 +29,7 @@ grant_all_access(){
 	T_DB_NAME=$2
 
 	if [ -n "$T_DB_USER" ]; then
-		if [ -n "$T_DB_NAME" ]; then
+		if [ ! -z "$T_DB_NAME" ]; then
 			echo "Grant Previlages ( User : $T_DB_USER ) ( DB : $T_DB_NAME )"
 			CMD="GRANT ALL PRIVILEGES ON ${T_DB_NAME}.* TO $T_DB_USER@localhost;"
 			$DB_CMD "$CMD" 2> /dev/null 1>/dev/null

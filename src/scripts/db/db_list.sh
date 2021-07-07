@@ -1,4 +1,4 @@
-source ./db_helper/db_helper.sh
+cd db_helper; source ./db_helper.sh; cd ..
 
 echo
 echo "Listing Databases:"

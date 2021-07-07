@@ -1,9 +1,9 @@
-source ./db_helper/db_helper.sh
+cd db_helper; source ./db_helper.sh; cd ..
 
 drop_db(){
 	T_DB_NAME="$1"
 
-	if [ -n "$T_DB_NAME" ]; then
+	if [ ! -z "$T_DB_NAME" ]; then
 		echo "Dropping DB -> ${T_DB_NAME}"	
 		CMD="DROP DATABASE $T_DB_NAME;"
 	  	$DB_CMD "$CMD" 2>/dev/null 1>/dev/null
@@ -16,7 +16,7 @@ drop_users(){
 	
 	CMD="DROP USER ${T_DB_USER}@localhost;"
 
-	if [ -n "$T_DB_USER" ]; then
+	if [ ! -z "$T_DB_USER" ]; then
 		echo "Dropping USER -> ${T_DB_USER}"	
 	  	$DB_CMD "$CMD" 2>/dev/null 1>/dev/null
 		#[ $? -ne 0 ] && { echo "error line ( db_clear.sh:${LINENO} )"; exit 1; }

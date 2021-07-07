@@ -1,7 +1,10 @@
-source ../../app_config.sh
-source ../../import_utils/config.sh
+source ../../../app_config.sh
+source ../../../import_utils/config.sh
+
 
 CONTAINER_NAME="${DOCKER_IMAGE_NAME}.dapp"
+
+echo "Docker Name : "$CONTAINER_NAME
 
 CONTAINER_ID=`docker ps --filter name=$CONTAINER_NAME --format {{.ID}}`
 
