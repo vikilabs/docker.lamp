@@ -2,6 +2,7 @@ source ./build_config.sh
 
 chmod 777 scripts/build/*
 chmod 777 scripts/install/*
+chmod 777 scripts/webserver/*
 chmod 777 scripts/import_utils/*
 chmod 777 scripts/nginx/*.sh
 chmod 777 scripts/app/*
@@ -60,6 +61,10 @@ mkdir -p $DOCKER_IMAGE_PATH/$DOCKER_IMAGE_NAME/app_root/startup
 cp configs/* 			$DOCKER_IMAGE_PATH/$DOCKER_IMAGE_NAME/app_root/configs/
 
 cp scripts/install/* 		$DOCKER_IMAGE_PATH/$DOCKER_IMAGE_NAME/
+
+cp scripts/webserver/webserver_config.sh 	$DOCKER_IMAGE_PATH/$DOCKER_IMAGE_NAME/
+cp scripts/webserver/webserver_setup.sh 	$DOCKER_IMAGE_PATH/$DOCKER_IMAGE_NAME/
+cp scripts/webserver/install_certificate.sh 	$DOCKER_IMAGE_PATH/$DOCKER_IMAGE_NAME/
 
 cp $DOCKER_IMAGE_PATH/$DOCKER_IMAGE_NAME/
 

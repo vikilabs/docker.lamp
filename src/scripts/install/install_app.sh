@@ -1,4 +1,5 @@
-chmod 777 ./install_docker_engine.sh
+chmod 777 ./install_prerequisite.sh
+./install_prerequisite.sh
 
 source ./app_config.sh
 CONTAINER_NAME="${DOCKER_IMAGE_NAME}.dapp"
