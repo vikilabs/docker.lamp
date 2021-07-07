@@ -1,5 +1,12 @@
-source ../../../app_config.sh
-source ../../../import_utils/config.sh
+BASE_PATH=/root/docker_ubuntu/bin/vikilabs_lamp
+if [ -z "$BASE_PATH" ]; then
+        echo "Execute ( ./configure.sh ) first"
+        exit 0
+fi
+
+
+source $BASE_PATH/configs/app_config.sh
+source $BASE_PATH/configs/db_config.sh
 
 
 CONTAINER_NAME="${DOCKER_IMAGE_NAME}.dapp"

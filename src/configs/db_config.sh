@@ -1,20 +1,18 @@
-#########################################
-#	SOURCE CODE LOCATION 		#
-#########################################
-
-#Location of Source Code and Data [ To Import From ]
-#The contents of SOURCE_CODE_LOCATION will be copied to app_root/app [ Website Root ]
-SOURCE_CODE_LOCATION=""
+if [ -z "$BASE_PATH" ]; then
+	echo "Execute ( ./configure.sh ) first"
+  	exit 0
+fi
 
 #########################################
 #	DATABASE DETAILS		#
 #########################################
 
-DB1_NAME=""
-DB1_USERNAME=""
-DB1_PASSWORD=""
+DB1_NAME="u616106619_vlpartner"
+DB1_USERNAME="u616106619_dbadmin"
+DB1_PASSWORD="VLPT2dbadmin"
 #Location of db dump [ To Import From ]
-DB1_DUMP_LOCATION=""
+DB1_DUMP_LOCATION="$BASE_PATH/app_root/db/db.sql"
+ls $DB1_DUMP_LOCATION
 
 DB2_NAME=""
 DB2_USERNAME=""

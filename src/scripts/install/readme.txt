@@ -17,7 +17,7 @@
 
 5. webserver_setup.sh
 
-	- Configure Host Web server ( Check, webserver_config.sh for reference ) 
+	- Configure Host Web server ( Check, configs/webserver_config.sh for reference ) 
 
 6. install_ssl_certificate_and_autorenew.sh
 	

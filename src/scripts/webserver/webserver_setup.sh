@@ -1,6 +1,10 @@
-#!/bin/bash
-source app_config.sh
-source webserver_config.sh
+if [ -z "$BASE_PATH" ]; then
+        echo "Execute ( ./configure.sh ) first"
+        exit 0
+fi
+
+source $BASE_PATH/configs/app_config.sh
+source $BASE_PATH/configs/webserver_config.sh
 
 get_docker_container_details(){
 	CONTAINER_NAME="${DOCKER_IMAGE_NAME}.dapp"

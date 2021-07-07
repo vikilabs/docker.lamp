@@ -1,3 +1,13 @@
+BASE_PATH=/root/docker_ubuntu/bin/vikilabs_lamp
+if [ -z "$BASE_PATH" ]; then
+        echo "Execute ( ./configure.sh ) first"
+        exit 0
+fi
+
+cd $BASE_PATH/scripts/db/
+[ $? -ne 0 ] && { echo "error line ( db_create.sh : ${LINENO} )"; exit 1; }
+
+
 cd db_helper; source ./db_helper.sh; cd ..
 
 create_db(){
